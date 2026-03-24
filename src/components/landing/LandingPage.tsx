@@ -3,7 +3,6 @@ import { motion, useScroll, useSpring } from 'framer-motion'
 import Section from './Section'
 import Layout from './Layout'
 import { sections } from './sections'
-import Icon from '@/components/ui/icon'
 
 export default function LandingPage() {
   const [activeSection, setActiveSection] = useState(0)
@@ -44,12 +43,6 @@ export default function LandingPage() {
 
   return (
     <Layout>
-      <div className="fixed top-0 left-0 z-30 p-5 flex items-center gap-3">
-        <div className="w-9 h-9 rounded-lg bg-[#4FC3F7] flex items-center justify-center">
-          <Icon name="Layers" size={20} className="text-black" />
-        </div>
-        <span className="text-white font-bold text-xl tracking-tight">МастерОк</span>
-      </div>
       <nav className="fixed top-0 right-0 h-screen flex flex-col justify-center z-30 p-4">
         {sections.map((section, index) => (
           <button
