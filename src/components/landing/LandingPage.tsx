@@ -52,11 +52,11 @@ export default function LandingPage() {
           <span className="text-white font-bold text-xl tracking-tight">МастерОк</span>
         </div>
         <a
-          href="tel:+79922564644"
+          href="tel:+79923564644"
           className="flex items-center gap-2 text-white hover:text-[#4FC3F7] transition-colors font-medium"
         >
           <Icon name="Phone" size={16} className="text-[#4FC3F7]" />
-          +7 992 256-46-44
+          +7 992 356-46-44
         </a>
       </div>
       <nav className="fixed top-0 right-0 h-screen flex flex-col justify-center z-30 p-4">
