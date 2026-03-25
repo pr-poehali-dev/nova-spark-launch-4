@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { motion, useScroll, useSpring } from 'framer-motion'
 import Section from './Section'
 import Layout from './Layout'
+import CalculatorSection from './CalculatorSection'
 import { sections } from './sections'
 import Icon from '@/components/ui/icon'
 
@@ -60,7 +61,7 @@ export default function LandingPage() {
         </a>
       </div>
       <nav className="fixed top-0 right-0 h-screen flex flex-col justify-center z-30 p-4">
-        {sections.map((section, index) => (
+        {[...sections.slice(0, 1), { id: 'calculator' }, ...sections.slice(1)].map((section, index) => (
           <button
             key={section.id}
             className={`w-3 h-3 rounded-full my-2 transition-all ${
@@ -78,11 +79,17 @@ export default function LandingPage() {
         ref={containerRef}
         className="h-full overflow-y-auto snap-y snap-mandatory"
       >
-        {sections.map((section, index) => (
+        <Section
+          key={sections[0].id}
+          {...sections[0]}
+          isActive={activeSection === 0}
+        />
+        <CalculatorSection isActive={activeSection === 1} />
+        {sections.slice(1).map((section, index) => (
           <Section
             key={section.id}
             {...section}
-            isActive={index === activeSection}
+            isActive={index + 2 === activeSection}
           />
         ))}
       </div>
